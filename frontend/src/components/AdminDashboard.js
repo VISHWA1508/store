@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Package, ShoppingCart, TrendingUp, Users, Plus, Edit, Trash2, Eye, Search, Filter, X } from 'lucide-react';
+import { Package, ShoppingCart, TrendingUp, Users, Plus, Edit, Trash2, Eye, Search, X } from 'lucide-react';
 
 export function AdminDashboard({ products, orders, onAddProduct, onNavigate, loading }) {
     const [showAddProduct, setShowAddProduct] = useState(false);

@@ -8,19 +8,18 @@ import { Header } from './components/Header';
 import { CustomerView } from './components/CustomerView';
 import { AdminDashboard } from './components/AdminDashboard';
 import { LandingPage } from './components/LandingPage';
-import { ShoppingBag, Package, Plus, User, Settings } from 'lucide-react';
+import { ShoppingBag, Package, Plus } from 'lucide-react';
 import './App.css';
 
 function App() {
     const [currentView, setCurrentView] = useState('landing'); // landing, customer, admin, products
     const [products, setProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({name: "", price: "", stock_quantity: "", is_available: true});
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [productDetail, setProductDetail] = useState(null);
     const [activeTab, setActiveTab] = useState('products');
     const [loading, setLoading] = useState(false);
     const [cart, setCart] = useState([]);
-    const [orders, setOrders] = useState([]);
+    const [orders] = useState([]);
 
     useEffect(() => {
         if (currentView === 'products' || currentView === 'admin' || currentView === 'customer') {
@@ -47,7 +46,6 @@ function App() {
 
     async function handleAddProduct(productData) {
         await addProduct(productData);
-        setNewProduct({name: "", price: "", stock_quantity: "", is_available: true});
         const updatedProducts = await fetchProducts();
         setProducts(updatedProducts);
     }

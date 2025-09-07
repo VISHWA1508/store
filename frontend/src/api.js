@@ -1,5 +1,5 @@
 // src/api.js
-const API_BASE = "https://alqycoxzai.execute-api.eu-north-1.amazonaws.com/live"; // Update with your API Gateway endpoint
+const API_BASE = "https://alqycoxzai.execute-api.eu-north-1.amazonaws.com/live/"; // Update with your API Gateway endpoint
 
 export async function fetchProducts() {
     const resp = await fetch(`${API_BASE}/products`);
